@@ -12,7 +12,9 @@ def kdtree(point_list, depth: int = 0):
     if not point_list:
         return None
 
+    # k = 2 in our case
     k = len(point_list[0])  # assumes all points have the same dimension
+    
     # Select axis based on depth so that axis cycles through all valid values
     axis = depth % k
 

@@ -1,6 +1,11 @@
 import math
 
 
+def chunks(a, n):
+    k, m = divmod(len(a), n)
+    return (a[i * k + min(i, m):(i + 1) * k + min(i + 1, m)] for i in range(n))
+
+
 def calc_distance(p1, p2):
     return math.sqrt(((p1[0]-p2[0])**2) + ((p1[1]-p2[1])**2))
 

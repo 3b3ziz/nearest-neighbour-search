@@ -3,7 +3,7 @@ from utils import calc_distance
 
 def nn_search(tree, point, depth: int = 0):
 
-    current_best = 10 ** 10
+    current_best = float('inf')
     nearest_station = None
 
     def nn_search_helper(point, tree, depth: int = 0):

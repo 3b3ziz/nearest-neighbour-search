@@ -18,9 +18,11 @@ def main():
 
         sugg_station = (sugg_station_name, (sugg_station_x, sugg_station_y))
 
-        print('knn ', knn(all_stations, sugg_station))
-        print('nn_search ', nn_search(tree, sugg_station))
-        print('knn_with_threading ', knn_with_threading(all_stations, sugg_station))
+        # print('knn ', knn(all_stations, sugg_station))
+        # print('nn_search ', nn_search(tree, sugg_station))
+        # print('knn_with_threading ', knn_with_threading(all_stations, sugg_station))
+        nearest_station_name, distance = knn_with_threading(all_stations, sugg_station)
+        print(sugg_station_name, nearest_station_name)
 
 
 if __name__ == '__main__':

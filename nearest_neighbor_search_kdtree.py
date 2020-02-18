@@ -25,8 +25,6 @@ for _ in range(routes_num):
         all_stations.append(station)
 
 
-print(all_stations)
-
 only_coordinates = list(map(lambda x: x['coordinates'], all_stations))
 numby_coordinates = np.array(only_coordinates)
 kdt = KDTree(numby_coordinates, leaf_size=30, metric='euclidean')
@@ -48,5 +46,4 @@ for _ in range(sugg_stations_num):
     minimum_distance = 10 ** 10
 
     dist, ind = kdt.query(np.array([sugg_station['coordinates']]), k=1)
-    # print(dist, ind)
     print(ind[0])

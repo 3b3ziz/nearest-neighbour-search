@@ -1,6 +1,8 @@
 from utils import calc_distance
 
-def knn(all_stations, sugg_station, nearest_stations = []):
+
+def knn(all_stations, sugg_station, nearest_stations=[],
+        nearest_stations_distances=None, nearest_stations_names=None, index=0):
     nearest_station = ''
     minimum_distance = float('inf')
     for station in all_stations:
@@ -10,4 +12,8 @@ def knn(all_stations, sugg_station, nearest_stations = []):
             nearest_station = station[0]
 
     nearest_stations.append((nearest_station, minimum_distance))
+    if nearest_stations_distances:
+        nearest_stations_distances[index] = minimum_distance
+    if nearest_stations_names:
+        nearest_stations_names[index] = nearest_station
     return (nearest_station, minimum_distance)
